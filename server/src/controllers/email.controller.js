@@ -34,8 +34,8 @@ const sendEmail = async (items) => {
       port: 465,
       secure: true,
       auth: {
-        user: "dev@sayantanmondal.com",
-        pass: "Rahul@1012",
+        user: config.mailCreds.user,
+        pass: config.mailCreds.pass,
       },
     });
 

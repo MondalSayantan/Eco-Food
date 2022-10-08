@@ -9,7 +9,7 @@ const sgMail = require("@sendgrid/mail");
 //   const msg = {
 //     to: "sayantan.dps@gmail.com",
 //     from: "dev@sayantanmondal.com",
-//     subject: `New message "`,
+//     subject: `Your Updates"`,
 //     text: "Your Updates",
 //     html: emailTemplate(items),
 //   };
