@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
+import Footer from "../components/footer";
 
 const StatusTable = () => {
   //map function
@@ -71,6 +72,7 @@ const StatusTable = () => {
           </table>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

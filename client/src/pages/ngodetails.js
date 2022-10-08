@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
+import Footer from "../components/footer";
 
 const NgoDetails = () => {
   //map function
@@ -62,6 +63,7 @@ const NgoDetails = () => {
           </table>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

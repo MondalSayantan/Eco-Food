@@ -22,7 +22,10 @@ const Addingredients = () => {
     };
     //try catch block
     try {
-      const response = await axios.post("http://localhost:8080/ngo", data);
+      const response = await axios.post(
+        "http://localhost:8080/ingredient",
+        data
+      );
       console.log(response);
       alert("Ingredient added successfully");
     } catch (error) {

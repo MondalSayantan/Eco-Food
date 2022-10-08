@@ -9,9 +9,9 @@ import StatusTable from "./pages/statusTable";
 const App = () => {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       {/* <Addingredients /> */}
-      <NgoDetails />
+      {/* <NgoDetails /> */}
       {/* <Joinwithus /> */}
       {/* <StatusTable /> */}
       {/* <ExpireTable /> */}
