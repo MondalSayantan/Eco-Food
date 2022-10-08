@@ -10,7 +10,17 @@ const createIngredient = async (ingredientBody) => {
   return ingredient;
 };
 
+const expireIngredients = async () => {
+  const ingredients = await Ingredient.find({
+    expiryDate: {
+      $lte: new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000),
+    },
+  });
+  return ingredients;
+};
+
 module.exports = {
   createIngredient,
   getIngredients,
+  expireIngredients,
 };

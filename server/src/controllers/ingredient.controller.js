@@ -19,7 +19,17 @@ const createIngredient = async (req, res, next) => {
   }
 };
 
+const expireIngredients = async (req, res, next) => {
+  try {
+    const ingredients = await ingredientService.expireIngredients();
+    res.send(ingredients);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createIngredient,
   getIngredients,
+  expireIngredients,
 };
