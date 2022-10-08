@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import Headerclone from "./headerclone";
 import axios from "axios";
@@ -22,10 +22,7 @@ const Addingredients = () => {
     };
     //try catch block
     try {
-      const response = await axios.post(
-        "http://localhost:8080/ingredient",
-        data
-      );
+      const response = await axios.post("http://localhost:8080/ngo", data);
       console.log(response);
       alert("Ingredient added successfully");
     } catch (error) {

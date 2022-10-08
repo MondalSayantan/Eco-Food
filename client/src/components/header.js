@@ -9,7 +9,8 @@ const Header = () => {
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
             <a class="mr-5 hover:text-gray-900">Home</a>
             <a class="mr-5 hover:text-gray-900">Join With Us</a>
-            <a class="mr-5 hover:text-gray-900">Contact</a>
+            <a class="mr-5 hover:text-gray-900">All Items</a>
+            <a class="mr-5 hover:text-gray-900">Expiring items List</a>
           </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
             <img

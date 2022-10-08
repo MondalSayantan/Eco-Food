@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
+import axios from "axios";
 
 const Joinwithus = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [address, setAddress] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      name,
+      email,
+      mobile,
+      address,
+      message,
+    };
+    //try catch block
+    try {
+      const response = axios.post("http://localhost:8080/ngo", data);
+      console.log(response);
+      alert("Your message has been sent successfully");
+    } catch (error) {
+      console.log(error);
+      alert("Error sending message");
+    }
+  };
+
   return (
     <div>
       <Headerclone />
@@ -30,6 +57,7 @@ const Joinwithus = () => {
                         id="name"
                         name="name"
                         class="w-full bg-white bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                   </div>
@@ -43,6 +71,7 @@ const Joinwithus = () => {
                         id="email"
                         name="email"
                         class="w-full bg-white bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                   </div>
@@ -56,6 +85,7 @@ const Joinwithus = () => {
                         id="mobile"
                         name="mobile"
                         class="w-full bg-white bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        onChange={(e) => setMobile(e.target.value)}
                       />
                     </div>
                   </div>
@@ -69,6 +99,7 @@ const Joinwithus = () => {
                         id="address"
                         name="address"
                         class="w-full bg-white bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        onChange={(e) => setAddress(e.target.value)}
                       />
                     </div>
                   </div>
@@ -84,11 +115,15 @@ const Joinwithus = () => {
                         id="message"
                         name="message"
                         class="w-full bg-white bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </div>
                   </div>
                   <div class="p-2 w-full">
-                    <button class="flex mx-auto shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                    <button
+                      class="flex mx-auto shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      onClick={handleSubmit}
+                    >
                       Button
                     </button>
                   </div>
