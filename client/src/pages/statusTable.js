@@ -30,8 +30,8 @@ const StatusTable = () => {
       <Headerclone />
       <div className="bg">
         <div className=" flex justify-center items-center overflow-x-auto relative">
-          <table className="w-half text-sm text-left text-gray-500 dark:text-gray-400 bg-opacity-10 mt-11 ">
-            <thead className="text-l text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-half text-sm text-left text-gray-500 dark:text-gray-400 bg-opacity-10 mt-11 border-2 border-yellow-600">
+            <thead className="text-l text-gray-700 uppercase bg-yellow-500 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
                   Ingredient name

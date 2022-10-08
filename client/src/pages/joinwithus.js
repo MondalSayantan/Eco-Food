@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
 import Footer from "../components/footer";
+import { useSnackbar } from "notistack";
 
 const Joinwithus = () => {
   const [name, setName] = useState("");
@@ -9,6 +10,8 @@ const Joinwithus = () => {
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
   const [message, setMessage] = useState("");
+
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,12 +24,22 @@ const Joinwithus = () => {
     };
     //try catch block
     try {
-      const response = axios.post("http://localhost:8080/ngo", data);
-      console.log(response);
-      alert("Your message has been sent successfully");
+      const response = axios
+        .post("http://localhost:8080/ngo", data)
+        .then((response) => {
+          enqueueSnackbar("NGO added successfully", {
+            variant: "success",
+          });
+        })
+        .catch((error) => {
+          enqueueSnackbar("Error occured", {
+            variant: "error",
+          });
+        });
     } catch (error) {
-      console.log(error);
-      alert("Error sending message");
+      enqueueSnackbar("Error occured", {
+        variant: "error",
+      });
     }
   };
 
@@ -38,10 +51,10 @@ const Joinwithus = () => {
           <section className="text-gray-600 body-font relative">
             <div className="container px-5 py-24 mx-auto">
               <div className="flex flex-col text-center w-full mb-12">
-                <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                <h1 className="text-4xl title-font mb-4 text-yellow-700 font-extrabold">
                   Join Us
                 </h1>
-                <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                <p className="lg:w-2/3 mx-auto leading-relaxed text-lg font-bold text-gray-700">
                   WE ARE NOT A TEAM BECAUSE WE WORK TOGETHER. WE ARE A TEAM
                   BECAUSE WE RESPECT, TRUST, AND CARE FOR EACH OTHER.
                 </p>
@@ -52,7 +65,7 @@ const Joinwithus = () => {
                     <div className="relative">
                       <label
                         for="name"
-                        className="leading-7 text-l text-gray-600"
+                        className="leading-7 text-lg text-gray-700"
                       >
                         Name of Organization
                       </label>
@@ -69,7 +82,7 @@ const Joinwithus = () => {
                     <div className="relative">
                       <label
                         for="email"
-                        className="leading-7 text-l text-gray-600"
+                        className="leading-7 text-lg text-gray-700"
                       >
                         Email
                       </label>
@@ -86,7 +99,7 @@ const Joinwithus = () => {
                     <div className="relative">
                       <label
                         for="name"
-                        className="leading-7 text-l text-gray-600"
+                        className="leading-7 text-lg text-gray-700"
                       >
                         Contact Number
                       </label>
@@ -103,7 +116,7 @@ const Joinwithus = () => {
                     <div className="relative">
                       <label
                         for="email"
-                        className="leading-7 text-l text-gray-600"
+                        className="leading-7 text-lg text-gray-700"
                       >
                         Address
                       </label>
@@ -120,7 +133,7 @@ const Joinwithus = () => {
                     <div className="relative">
                       <label
                         for="message"
-                        className="leading-7 text-l text-gray-600"
+                        className="leading-7 text-lg text-gray-700"
                       >
                         Message or Query
                       </label>
@@ -134,10 +147,10 @@ const Joinwithus = () => {
                   </div>
                   <div className="p-2 w-full">
                     <button
-                      className="flex mx-auto shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                      className="flex mx-auto shadow bg-yellow-600 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                       onClick={handleSubmit}
                     >
-                      Button
+                      Register NGO
                     </button>
                   </div>
                 </div>

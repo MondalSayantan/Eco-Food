@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import Headerclone from "./headerclone";
 import axios from "axios";
+import { useSnackbar } from "notistack";
 
 const Addingredients = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,8 @@ const Addingredients = () => {
   const [purchaseDate, setpurchaseDate] = useState("");
   const [expiryDate, setexpiryDate] = useState("");
   const [category, setCategory] = useState("");
+
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = async () => {
     const data = {
@@ -22,15 +25,17 @@ const Addingredients = () => {
     };
     //try catch block
     try {
-      const response = await axios.post(
-        "http://localhost:8080/ingredient",
-        data
-      );
-      console.log(response);
-      alert("Ingredient added successfully");
+      const response = await axios
+        .post("http://localhost:8080/ingredient", data)
+        .then((response) => {
+          enqueueSnackbar("Ingredient added successfully", {
+            variant: "success",
+          });
+        });
     } catch (error) {
-      console.log(error);
-      alert("Error adding ingredient");
+      enqueueSnackbar("Error occured", {
+        variant: "error",
+      });
     }
   };
 
@@ -93,7 +98,7 @@ const Addingredients = () => {
                   id="category"
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option>Friuts</option>
+                  <option>Fruits</option>
                   <option>Dairy Products</option>
                   <option>Eggs / Breads</option>
                   <option>Hearbs And Spices</option>
@@ -174,7 +179,7 @@ const Addingredients = () => {
               <div className="md:w-1/3"></div>
               <div className="md:w-2/3">
                 <button
-                  className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                  className="shadow bg-yellow-700 hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                   type="button"
                   onClick={handleSubmit}
                 >

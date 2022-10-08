@@ -34,7 +34,7 @@ const Header = () => {
             />
           </div>
           <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+            <button className="inline-flex items-center bg-yellow-700 border-0 py-1 px-3 focus:outline-none hover:bg-yellow-500 rounded text-base mt-4 md:mt-0 text-white">
               Login
               <svg
                 fill="none"
@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div className="bg-emerald-300 text-l font-serif">
+      <div className="bg-yellow-500 text-l font-serif">
         <marquee behavior="scroll" direction="right" scrollamount="10">
           Save Food Save Future !! Donate Food to the Needy!!
         </marquee>
