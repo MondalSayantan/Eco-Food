@@ -8,7 +8,7 @@ sgMail.setApiKey(config.sendgrid.apiKey);
 const sendEmail = async (req, res, next) => {
   const msg = {
     to: "sayantan.dps@gmail.com",
-    from: "wildhacks@sayantanmondal.com",
+    from: "hackandsnack@sayantanmondal.com",
     subject: `New message "`,
     text: "Hello",
     html: emailTemplate(),

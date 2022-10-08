@@ -8,6 +8,8 @@ module.exports = {
     url: "mongodb://localhost:27017/snack",
   },
   sendgrid: {
-    apiKey: process.env.SENDGRID_API_KEY,
+    // apiKey: process.env.SENDGRID_API_KEY,
+    apiKey:
+      "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",
   },
 };
