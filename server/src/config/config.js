@@ -10,6 +10,6 @@ module.exports = {
   sendgrid: {
     // apiKey: process.env.SENDGRID_API_KEY,
     apiKey:
-      "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",
+      // "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",
   },
 };
