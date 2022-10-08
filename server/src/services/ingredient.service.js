@@ -1,7 +1,7 @@
 const { Ingredient } = require("../models");
 
 const getIngredients = async () => {
-  const ingredients = await Ingredient.find();
+  const ingredients = await Ingredient.find({}).sort({ expiryDate: 1 });
   return ingredients;
 };
 
