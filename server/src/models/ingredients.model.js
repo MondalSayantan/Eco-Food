@@ -22,10 +22,6 @@ const ingredientsSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  shelfLife: {
-    type: Number,
-    required: true,
-  },
   category: {
     type: String,
   },

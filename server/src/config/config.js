@@ -3,9 +3,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 module.exports = {
-  port: 8080,
+  port: process.env.PORT,
   mongoose: {
-    url: "mongodb://localhost:27017/snack",
+    url: process.env.MONGODB_URL,
   },
   sendgrid: {
     apiKey: process.env.SENDGRID_API_KEY,
