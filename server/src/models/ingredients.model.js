@@ -18,6 +18,10 @@ const ingredientsSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  expiryDate: {
+    type: Date,
+    required: true,
+  },
   shelfLife: {
     type: Number,
     required: true,

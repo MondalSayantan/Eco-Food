@@ -5,6 +5,8 @@ const httpStatus = require("http-status");
 const routes = require("./routes");
 const helmet = require("helmet");
 const ErrorResponse = require("./utils/errorResponse");
+var cron = require("node-cron");
+const cronJob = require("./utils/cron");
 
 const app = express();
 
@@ -22,6 +24,12 @@ app.options("*", cors());
 app.use(routes);
 
 app.use(require("./middlewares/error"));
+
+app.use(require("./utils/cron"));
+
+cron.schedule("* * * * *", () => {
+  cronJob();
+});
 
 app.use((req, res, next) => {
   next(
