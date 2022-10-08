@@ -1,17 +1,17 @@
 const httpStatus = require("http-status");
 const config = require("../config/config");
 const sgMail = require("@sendgrid/mail");
-const { emailTemplate } = require("../utils/emailTemplate");
+const { ngoTemplate } = require("../utils/ngoTemplate");
 
 sgMail.setApiKey(config.sendgrid.apiKey);
 
 const sendEmail = async (req, res, next) => {
   const msg = {
-    to: "sayantan.dps@gmail.com",
+    to: req.body.email,
     from: "naveen.209303050@muj.manipal.edu",
     subject: `New message "`,
     text: "Hello",
-    html: emailTemplate(),
+    html: ngoTemplate(req.body.name),
   };
 
   try {
