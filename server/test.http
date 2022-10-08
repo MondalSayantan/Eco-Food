@@ -12,7 +12,21 @@
 # GET http://localhost:8080/ingredient HTTP/1.1
 # content-type: application/json
 
-GET http://localhost:8080/ingredient/expire HTTP/1.1
+# GET http://localhost:8080/ingredient/expire HTTP/1.1
+# content-type: application/json
+
+# POST http://localhost:8080/ngo HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "NGO 1",
+#     "email": "ngo@gmail.com",
+#     "mobile": 1234567890,
+#     "address": "Jaipur, Rajasthan",
+#     "message": "This is a message"
+# }
+
+GET http://localhost:8080/ngo HTTP/1.1
 content-type: application/json
 
 # POST http://localhost:8080/email HTTP/1.1
