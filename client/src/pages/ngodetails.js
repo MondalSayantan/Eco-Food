@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
 import Footer from "../components/footer";
+import ExpireTable from "./expiringItems";
+const { ItemContext } = require("../ItemContext");
 
 const NgoDetails = () => {
-  //map function
-  //map items to table
   const [items, setItems] = useState([]);
+  const { itemName } = React.useContext(ItemContext);
+  const [itemName1, setItemName] = itemName;
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("http://localhost:8080/ngo");
@@ -14,14 +16,38 @@ const NgoDetails = () => {
     };
     fetchData();
   }, []);
+  //alert message function
+  function alertMessage() {
+    alert(itemName1 + "Thank you for your donation");
+  }
 
   return (
     <div>
       <Headerclone />
       <div className="bg">
+        <div className=" flex justify-center items-center overflow-x-auto relative rounded-lg">
+          <table className="w-half text-sm text-left text-gray-500 dark:text-gray-400 bg-opacity-10 mt-11 rounded-lg">
+            <thead className="text-l text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400 rounded-xl">
+              <tr className="bg-gray-200 border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="col" className="py-3 px-6">
+                  Name of Item
+                </th>
+                <th scope="col" className="py-3 px-6">
+                  category
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td className="py-3 px-6">{itemName1}</td>
+                <td className="py-3 px-6">Donating Food</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div className=" flex justify-center items-center overflow-x-auto relative">
-          <table className="w-half text-sm text-left text-gray-500 dark:text-gray-400 bg-opacity-10 mt-11 ">
-            <thead className="text-l text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-half text-sm text-left text-gray-500 dark:text-gray-400  mt-11 ">
+            <thead class="text-l text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
                   Name of NGO
@@ -53,7 +79,10 @@ const NgoDetails = () => {
                   <td className="py-4 px-6">{item.mobile}</td>
                   <td className="py-4 px-6">{item.email}</td>
                   <td className="py-4 px-6 text-center">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                      onClick={alertMessage}
+                    >
                       Select
                     </button>
                   </td>

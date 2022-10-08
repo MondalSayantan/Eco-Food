@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
 import Footer from "../components/footer";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+const { ItemContext } = require("../ItemContext");
 
 const ExpireTable = () => {
-  //map function
-  //map items to table
+  const navigate = useNavigate();
   const [items, setItems] = useState([]);
+  const { itemName } = React.useContext(ItemContext);
+
+  const [itemName1, setItemName] = itemName;
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("http://localhost:8080/ingredient/expire");
@@ -61,11 +64,15 @@ const ExpireTable = () => {
                   <td className="py-4 px-6">{item.quantity}</td>
                   <td className="py-4 px-6">{item.unitPrice}</td>
                   <td className="py-4 px-6 text-center">
-                    <Link to="/ngodetails">
-                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        Donate
-                      </button>
-                    </Link>
+                    <button
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                      onClick={() => {
+                        setItemName(item.name);
+                        navigate("/ngodetails");
+                      }}
+                    >
+                      Donate
+                    </button>
                   </td>
                 </tr>
               ))}
