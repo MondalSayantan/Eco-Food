@@ -5,16 +5,19 @@ import ExpireTable from "./pages/expiringItems";
 import Joinwithus from "./pages/joinwithus";
 import NgoDetails from "./pages/ngodetails";
 import StatusTable from "./pages/statusTable";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      <Header />
-      {/* <Addingredients /> */}
-      {/* <NgoDetails /> */}
-      {/* <Joinwithus /> */}
-      {/* <StatusTable /> */}
-      {/* <ExpireTable /> */}
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/addingredients" element={<Addingredients />} />
+        <Route path="/ngodetails" element={<NgoDetails />} />
+        <Route path="/joinwithus" element={<Joinwithus />} />
+        <Route path="/statustable" element={<StatusTable />} />
+        <Route path="/expiringitems" element={<ExpireTable />} />
+      </Routes>
     </div>
   );
 };
