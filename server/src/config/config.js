@@ -10,4 +10,8 @@ module.exports = {
   sendgrid: {
     apiKey: process.env.SENDGRID_API_KEY,
   },
+  mailCreds: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+  },
 };

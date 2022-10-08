@@ -1,4 +1,4 @@
-module.exports.emailTemplate = () => {
+module.exports.emailTemplate = (items) => {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html
@@ -779,15 +779,21 @@ module.exports.emailTemplate = () => {
                             >
                              <table border="2px" style='padding: 1rem; ' align='center' width="100%" cellpadding="0" cellspacing="0" >
                               <thead align='center'>
+                                <th style='padding: 1rem; width:15px'>SNo.</th>
                                 <th style='padding: 1rem; width:15px'>Item Name</th>
                                 <th style='padding: 1rem; width:15px'>Expiry In</th>
                               </thead>
                            <tbody>
                         
-                           <tr>
-                               <th style='padding: 1rem;'>Tomatoes</th>
-                                  <th style='padding: 1rem;'>2 days</th>      
-                                </tr>
+                           ${items
+                             .map((item, i) => {
+                               return `<tr key=${i}>
+                                  <th>${i + 1}</th>
+                                  <th>${item.name}</th>
+                                  <th>${item.expiryDate}</th>
+                                </tr>`;
+                             })
+                             .join("")}
                               </tbody>
                             </table>
                              

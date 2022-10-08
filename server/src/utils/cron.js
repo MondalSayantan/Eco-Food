@@ -1,4 +1,5 @@
 const { Ingredient } = require("../models");
+const { sendEmail } = require("./sendEmail");
 
 const cronJob = async () => {
   const ingredients = await Ingredient.find({
@@ -6,7 +7,9 @@ const cronJob = async () => {
       $lte: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
     },
   });
-  console.log(ingredients);
+  if (ingredients.length > 0) {
+    sendEmail(ingredients);
+  }
 };
 
 module.exports = cronJob;
