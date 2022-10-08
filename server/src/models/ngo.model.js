@@ -21,9 +21,12 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+  },
   message: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 
