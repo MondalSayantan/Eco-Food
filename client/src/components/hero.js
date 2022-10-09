@@ -22,9 +22,8 @@ const Hero = () => {
               Tomorrow's Shortage
             </h1>
             <p className="mb-8 leading-relaxed text-yellow-700">
-              “Good bread is the most fundamentally satisfying of all foods;
-              good bread with fresh butter, the greatest of feasts!” – James
-              Beard
+              Take charge of your kitchen to ensure nobody goes hungry in this
+              world
             </p>
             <div className="flex justify-center">
               <div className="flex justify-center items-center mt-4">
