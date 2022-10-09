@@ -416,7 +416,7 @@ module.exports.ngoTemplate = (name) => {
                               "
                             >
                               <span style="font-size: 22px"
-                                ><strong>Hack And Snack</strong></span
+                                ><strong>Food Relevel</strong></span
                               >
                             </p>
                           </div>

@@ -27,9 +27,9 @@ app.use(require("./middlewares/error"));
 
 app.use(require("./utils/cron"));
 
-// cron.schedule("* * * * *", () => {
-//   cronJob();
-// });
+cron.schedule("* * * * *", () => {
+  cronJob();
+});
 
 app.use((req, res, next) => {
   next(
