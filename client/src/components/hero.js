@@ -1,7 +1,9 @@
 import React from "react";
 import MainComponent from "./MainComponent";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -24,14 +26,27 @@ const Hero = () => {
               good bread with fresh butter, the greatest of feasts!” – James
               Beard
             </p>
-            {/* <div className="flex justify-center">
-              <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Button
-              </button>
-              <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                Button
-              </button>
-            </div> */}
+            <div className="flex justify-center">
+              <div className="flex justify-center items-center mt-4">
+                <button
+                  className="bg-yellow-700 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full flex justify-center items-center"
+                  onClick={() => {
+                    navigate("/expiringitems");
+                  }}
+                >
+                  Donate Now
+                  {/* <div className="ml-2 text-white">
+                    <img
+                      color="white"
+                      src="https://i.postimg.cc/7ZcW6wQF/20642841761530177259-128.png"
+                      alt="donate"
+                      height={20}
+                      width={20}
+                    />
+                  </div> */}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import Headerclone from "./headerclone";
 import axios from "axios";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 const Addingredients = () => {
   const [name, setName] = useState("");
@@ -13,6 +14,7 @@ const Addingredients = () => {
   const [category, setCategory] = useState("");
 
   const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     const data = {
@@ -32,6 +34,7 @@ const Addingredients = () => {
             variant: "success",
           });
         });
+      navigate("/statustable");
     } catch (error) {
       enqueueSnackbar("Error occured", {
         variant: "error",

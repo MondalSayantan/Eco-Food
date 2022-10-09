@@ -14,18 +14,18 @@ const Headerclone = () => {
               Add Ingredients
             </Link>
             <Link to="/joinwithus" className="mr-5 hover:text-gray-900">
-              Join Us
+              Get Help
             </Link>
             <Link to="/statustable" className="mr-5 hover:text-gray-900">
               All Items
             </Link>
             <Link to="/expiringitems" className="mr-5 hover:text-gray-900">
-              Expiring items List
+              Expiring items
             </Link>
           </nav>
           <div className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
             <img
-              src="https://i.postimg.cc/WbrtBgwT/Screenshot-2022-10-08-at-9-23-36-AM-removebg-preview.png"
+              src="https://i.postimg.cc/MKmfv2VJ/Screenshot-2022-10-09-at-10-37-39-AM-removebg-preview.png"
               alt="logo"
               width={100}
               height={100}

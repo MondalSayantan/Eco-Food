@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Headerclone from "./headerclone";
 import axios from "axios";
 import Footer from "../components/footer";
-import ExpireTable from "./expiringItems";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 const { ItemContext } = require("../ItemContext");
 
@@ -12,6 +12,7 @@ const NgoDetails = () => {
   const { itemName } = React.useContext(ItemContext);
   const [itemName1, setItemName] = itemName;
   const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -86,18 +87,25 @@ const NgoDetails = () => {
                   <td className="py-4 px-6 text-center">
                     <button
                       className="bg-yellow-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                      onClick={() => {
+                      onClick={async () => {
                         try {
-                          const res = axios.post(
+                          const res = await axios.post(
                             "http://localhost:8080/email",
                             {
                               name: itemName1,
                               email: item.email,
                             }
                           );
+                          const res2 = await axios.post(
+                            "http://localhost:8080/ingredient/delete",
+                            {
+                              name: itemName1,
+                            }
+                          );
                           enqueueSnackbar("Email sent successfully", {
                             variant: "success",
                           });
+                          navigate("/thankyou");
                         } catch (error) {
                           enqueueSnackbar("Email not sent", {
                             variant: "error",

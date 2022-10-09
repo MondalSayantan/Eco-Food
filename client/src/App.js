@@ -7,6 +7,7 @@ import NgoDetails from "./pages/ngodetails";
 import StatusTable from "./pages/statusTable";
 import { Routes, Route } from "react-router-dom";
 import { ItemContext } from "./ItemContext";
+import ThankingPage from "./pages/thankingpage";
 
 const App = () => {
   const [itemName, setItemName] = React.useState("");
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/joinwithus" element={<Joinwithus />} />
           <Route path="/statustable" element={<StatusTable />} />
           <Route path="/expiringitems" element={<ExpireTable />} />
+          <Route path="/thankyou" element={<ThankingPage />} />
         </Routes>
       </div>
     </ItemContext.Provider>

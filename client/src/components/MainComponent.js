@@ -8,15 +8,13 @@ const MainComponent = () => {
         <div className="container px-5 mx-auto">
           <div className="text-center mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-yellow-800 mb-4 font-bold">
-              Our works are designed to provide essential food support to
-              underserved areas in the form of food or packaged food products
-              depending on the need.
+              Commited to reduce food wastage and do our part in the community
             </h1>
             <p className="text-l leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s text-yellow-600">
               Our goal is to ensure, Feed people not landfills.
             </p>
             <div className="flex mt-6 justify-center">
-              <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+              <div className="w-16 h-1 rounded-full bg-yellow-800 inline-flex"></div>
             </div>
           </div>
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
