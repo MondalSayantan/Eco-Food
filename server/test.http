@@ -29,12 +29,19 @@
 # GET http://localhost:8080/ngo HTTP/1.1
 # content-type: application/json
 
-POST http://localhost:8080/email HTTP/1.1
+# POST http://localhost:8080/email HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "Tomato",
+#     "email": "sayantan.dps@gmail.com"
+# }
+
+POST http://localhost:8080/ingredient/delete HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Tomato",
-    "email": "sayantan.dps@gmail.com"
+    "name": "sample2",
 }
 
 

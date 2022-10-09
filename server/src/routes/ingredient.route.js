@@ -6,5 +6,6 @@ const router = express.Router();
 router.post("/", ingredientController.createIngredient);
 router.get("/", ingredientController.getIngredients);
 router.get("/expire", ingredientController.expireIngredients);
+router.delete("/delete", ingredientController.deleteIngredient);
 
 module.exports = router;

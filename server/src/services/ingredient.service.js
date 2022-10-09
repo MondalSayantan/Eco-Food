@@ -19,8 +19,14 @@ const expireIngredients = async () => {
   return ingredients;
 };
 
+const deleteIngredient = async (name) => {
+  const ingredient = await Ingredient.deleteOne({ name: name });
+  return ingredient;
+};
+
 module.exports = {
   createIngredient,
   getIngredients,
   expireIngredients,
+  deleteIngredient,
 };

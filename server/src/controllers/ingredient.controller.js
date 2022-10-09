@@ -28,8 +28,18 @@ const expireIngredients = async (req, res, next) => {
   }
 };
 
+const deleteIngredient = async (req, res, next) => {
+  try {
+    const ingredient = await ingredientService.deleteIngredient(req.body.name);
+    res.status(httpStatus.OK).send(ingredient);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createIngredient,
   getIngredients,
   expireIngredients,
+  deleteIngredient,
 };
