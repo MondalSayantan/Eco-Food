@@ -62,7 +62,7 @@ const Addingredients = () => {
                   className="bg-white appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="name"
                   type="text"
-                  placeholder="Name of the ingerdient"
+                  placeholder="Name of the ingredient"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>

@@ -9,7 +9,7 @@ const sendEmail = async (req, res, next) => {
   const msg = {
     to: req.body.email,
     from: "naveen.209303050@muj.manipal.edu",
-    subject: `New message "`,
+    subject: `You have received a donation`,
     text: "Hello",
     html: ngoTemplate(req.body.name),
   };

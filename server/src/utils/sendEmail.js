@@ -8,7 +8,7 @@ const sendEmail = async (items) => {
   const msg = {
     to: "sayantan.dps@gmail.com",
     from: "naveen.209303050@muj.manipal.edu",
-    subject: `Your Updates"`,
+    subject: `Items Expiring Soon!"`,
     text: "Your Updates",
     html: emailTemplate(items),
   };
